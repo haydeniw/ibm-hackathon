@@ -2,6 +2,7 @@ import tweepy
 import json
 import sys
 import time
+import config
 from pprint import pprint
 from flask_cors import CORS
 import requests
@@ -10,13 +11,13 @@ from flask import Flask,request
 app = Flask(__name__)
 CORS(app)
 
-access_token = '1077737654110760960-ndfzGh72jq0KxdhWoY4TNkVCS4IvQR'
-access_secret = 'dRrHteuBNAB9fGfge8vwwZ4bAy1cmQXsJCTufeWiyHZG9'
-consumer_key= 'qt7TGoQVKMFZZnpaFy4bkR4tX'
-consumer_secret = 'hMxjL3aUw3jcTxHdnr1wWpoYXtUOXu4G12ZCs0bLVbJiRyQUBA'
+access_token = config.access_token
+access_secret = config.access_secret
+consumer_key= config.consumer_key
+consumer_secret = config.consumer_secret
 
 username = "apikey"
-password = "iH8893SgeuzDpXY6WSkj4D6Gx1BzbVLUWdxjKI0QRYQx"
+password = config.api_key
 url = "https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2017-09-21"
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
